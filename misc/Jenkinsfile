@@ -1,12 +1,17 @@
-node {
-   stage('test') {
-      steps {
-          echo "stage 2"
-      }
-   }
-   stage('docker build/push') {
-      steps{
-          echo "third stage"
-      }
-   }
+pipeline {
+    agent any
+    
+    stages {
+        stage('Print Hello World 1') {
+            steps {
+                echo 'Hello World 1'
+            }
+        }
+        
+        stage('Print Hello World 2') {
+            steps {
+                echo 'Hello World 2'
+            }
+        }
+    }
 }
